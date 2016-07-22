@@ -1,15 +1,15 @@
 {
   "name": "unicharadata",
-  "version": "9.0.0-alpha.1",
+  "version": "9.0.0-alpha.2",
   "description": "Access Unicode character data from UnicodeData.txt",
   "main": "unicharadata.js",
   "engines": {
     "node": ">=6.0.0"
   },
   "scripts": {
-    "test": "node test.js",
     "download": "node make-udjson.js",
     "build": "node embed-udjson.js",
+    "test": "node test.js",
     "eslint": "eslint ."
   },
   "devDependencies": {

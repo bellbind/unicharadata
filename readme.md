@@ -9,9 +9,16 @@ Module for accessing Unicode character data from
 npm install unicharadata
 ```
 
-## Use on browser
+[npm pages](https://www.npmjs.com/package/unicharadata)
+
+## Use on browsers
 
 see: [browser-example.html](browser-example.html)
+
+CDNs
+
+- https://raw.githack.com/bellbind/unicharadata/master/unicharadata.js
+- https://rawgit.com/bellbind/unicharadata/master/unicharadata.js
 
 ## API
 
@@ -51,7 +58,7 @@ http://www.unicode.org/reports/tr44/#UnicodeData.txt
 ```js
 "use strict";
 
-const unicharadata = require(".");
+const unicharadata = require("unicharadata");
 
 // API
 console.assert(unicharadata.name("A") === "LATIN CAPITAL LETTER A");
@@ -92,6 +99,20 @@ console.assert(unicharadata.lookupname("\n") === "LINE FEED (LF)");
 ```
 
 
-# License
+## Development
+
+1. `npm run download`: update `UnicodeData.json` from `UnicodeData.txt` on the web
+2. `npm run build`: update `unicharadata.js` from `unicharadata-raw.js` and
+   `UnicodeData.json`
+3. `npm test`: run tests
+4. `npm run eslint`: check coding style with [eslint](http://eslint.org/)
+    - setup with `npm install` required
+
+The package version is based on the
+Unicode ["Version"](http://www.unicode.org/reports/tr44/) of `UnicodeData.txt`.
+
+- e.g. `9.0.0-alpha.2`: the Unicode version is `9.0.0`
+
+## License
 
 [ISC License](https://opensource.org/licenses/isc-license.txt)

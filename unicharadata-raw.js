@@ -11,7 +11,7 @@
       (_, i) => rangePair.slice(i * 2, (i + 1) * 2));
     const extslist = ranges.map(([first, last]) => {
       const props = first.slice(2);
-      const prefix = first[1].slice(fnamestart, fnameend);
+      const prefix = first[1].slice(fnamestart, fnameend).toUpperCase();
       const start = parseInt(first[0], 16), end = parseInt(last[0], 16);
       return Array.from(Array(end - start + 1), (_, i) => {
         const hex = (start + i).toString(16).toUpperCase();
