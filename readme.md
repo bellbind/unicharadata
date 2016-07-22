@@ -9,7 +9,22 @@ Module for accessing Unicode character data from
 npm install unicharadata
 ```
 
-[npm pages](https://www.npmjs.com/package/unicharadata)
+- [npm pages](https://www.npmjs.com/package/unicharadata)
+
+```js
+const unicharadata = require("unicharadata");
+```
+
+### Using prebuilt database
+
+NOTE: Current implementation is embeded UnicodeData.txt source
+then build complete character database on load time.
+
+This method uses large pre built database json file.
+
+```js
+const unicharadata = require("unicharadata/trial/unicharadata-load");
+```
 
 ## Use on browsers
 

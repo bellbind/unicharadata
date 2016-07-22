@@ -1,8 +1,11 @@
 {
   "name": "unicharadata",
-  "version": "9.0.0-alpha.2",
+  "version": "9.0.0-alpha.3",
   "description": "Access Unicode character data from UnicodeData.txt",
   "main": "unicharadata.js",
+  "directories": {
+    "trial": "trial"
+  },
   "engines": {
     "node": ">=6.0.0"
   },
