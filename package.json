@@ -1,6 +1,6 @@
 {
   "name": "unicharadata",
-  "version": "9.0.0-alpha.4",
+  "version": "9.0.0-alpha.6",
   "description": "Access Unicode character data from UnicodeData.txt",
   "main": "unicharadata.js",
   "directories": {
