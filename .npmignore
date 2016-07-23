@@ -1,0 +1,12 @@
+./data
+./benchmark-load.js
+./UnicodeData.json
+./unicharadata-raw.js
+./make-udjson.js
+./embed-udjson.js
+./trial/UnicodeData.gz.json
+./trial/unicharadata-embed-raw.js
+./trial/make-gzjson.js
+./trial/embed-gzjson.js
+./trial/make-database.js
+

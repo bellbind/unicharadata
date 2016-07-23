@@ -34,7 +34,7 @@ console.assert(unicharadata.decomposition("㍍") === "メートル");
 console.assert(unicharadata.decompositionTag("㍍") === "<square>");
 
 console.assert(unicharadata.decimal("１") === 1);
-console.assert(unicharadata.digit("１") === 1);
+console.assert(unicharadata.digit("④") === 4);
 console.assert(unicharadata.numeric("⅛") === 1 / 8);
 
 console.assert(unicharadata.unicode1name("\n") === "LINE FEED (LF)");

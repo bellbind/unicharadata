@@ -1,43 +1,58 @@
 # `unicharadata` module
 
-Module for accessing Unicode character data from
+JavaScript module for accessing Unicode character data from
 [UnicodeData.txt](http://unicode.org/Public/UCD/latest/ucd/UnicodeData.txt).
 
-## Use on nodejs
+## For nodejs
+
+Install with `npm` command as:
 
 ```
 npm install unicharadata
 ```
 
-- [npm pages](https://www.npmjs.com/package/unicharadata)
+- [npm package page](https://www.npmjs.com/package/unicharadata)
+
+then, load it in js files as:
 
 ```js
 const unicharadata = require("unicharadata");
 ```
 
-### Using prebuilt database
 
-NOTE: Current implementation is embeded UnicodeData.txt source
-then build complete character database on load time.
+### Option: Using prebuilt database version
+
+NOTE: For file size reducing,
+The current module implementation embeds UnicodeData.txt source
+and builds complete character database on load time.
 
 This method uses large pre built database json file.
+It would be about 1sec fatser than building database (around 4sec).
 
 ```js
 const unicharadata = require("unicharadata/trial/unicharadata-load");
 ```
 
-## Use on browsers
+## For browsers
+
+Load with standard `script` tag as:
+
+```html
+<script src="unicharadata.js"></script>
+```
 
 see: [browser-example.html](browser-example.html)
+( [demo](https://raw.githack.com/bellbind/unicharadata/master/browser-example.html) )
 
-CDNs
+
+Links via CDN
 
 - https://raw.githack.com/bellbind/unicharadata/master/unicharadata.js
 - https://rawgit.com/bellbind/unicharadata/master/unicharadata.js
 
 ## API
 
-Detail of the propeties are in
+NOTE: Detail of the character propeties are in
 http://www.unicode.org/reports/tr44/#UnicodeData.txt
 
 - `unicharadata.lookup(name, defaultch = "")`: search character from its name
@@ -82,7 +97,7 @@ console.assert(unicharadata.category("A") === "Lu");
 console.assert(unicharadata.combining("A") === 0);
 console.assert(unicharadata.bidirectional("A") === "L");
 console.assert(unicharadata.decomposition("A") === "A");
-console.assert(unicharadata.decompositionGroup("A") === "");
+console.assert(unicharadata.decompositionTag("A") === "");
 console.assert(isNaN(unicharadata.decimal("A")));
 console.assert(isNaN(unicharadata.digit("A")));
 console.assert(isNaN(unicharadata.numeric("A")));
@@ -104,17 +119,16 @@ console.assert(splitted[5] === "す");
 
 // specific
 console.assert(unicharadata.decomposition("㍍") === "メートル");
-console.assert(unicharadata.decompositionGroup("㍍") === "<square>");
+console.assert(unicharadata.decompositionTag("㍍") === "<square>");
 
 console.assert(unicharadata.decimal("１") === 1);
-console.assert(unicharadata.digit("１") === 1);
+console.assert(unicharadata.digit("④") === 4);
 console.assert(unicharadata.numeric("⅛") === 1 / 8);
 console.assert(unicharadata.unicode1name("\n") === "LINE FEED (LF)");
 console.assert(unicharadata.lookupname("\n") === "LINE FEED (LF)");
 ```
 
-
-## Development
+## Build
 
 1. `npm run download`: update `UnicodeData.json` from `UnicodeData.txt` on the web
 2. `npm run build`: update `unicharadata.js` from `unicharadata-raw.js` and
@@ -131,3 +145,12 @@ Unicode ["Version"](http://www.unicode.org/reports/tr44/) of `UnicodeData.txt`.
 ## License
 
 [ISC License](https://opensource.org/licenses/isc-license.txt)
+
+## References
+
+- `unicharadata` website: https://github.com/bellbind/unicharadata
+- Unicode Character Data: http://unicode.org/ucd/
+    - Spec (Unicode Standard Annex #44): http://unicode.org/reports/tr44/
+    - Data: http://unicode.org/Public/UCD/latest/ucd/
+- Python builtin `unicodedata` lib: https://docs.python.org/3/library/unicodedata.html
+    - function names borrowed from the library.
