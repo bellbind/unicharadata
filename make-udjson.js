@@ -17,7 +17,7 @@ http.get(url, res => {
     // properties: http://www.unicode.org/reports/tr44/#UnicodeData.txt
     //  0: Code Point (hex)
     //  1: Name
-    //  2: General Coategory
+    //  2: General Category
     //  3: Canonical Combining Class
     //  4: Bidi Class
     //  5: Decomposition Mapping
